@@ -1,0 +1,87 @@
+
+from bs4 import BeautifulSoup
+import json
+import requests
+from lxml import etree
+import urllib
+inputword = input("请输入你要查询的内容：")
+word = urllib.parse.quote(inputword)
+
+headers = {
+    "User-Agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.75 Safari/537.36 Edg/100.0.1185.36"
+}
+
+url = requests.get('https://www.baidu.com/s?wd=%s&rsv_spt=1&rsv_iqid=0xda29fd77000003c6&issp=1&f=8&rsv_bp=1&rsv_idx=2&ie=utf-8&tn=baiduhome_pg&rsv_enter=1&rsv_dl=ib&rsv_sug3=21&rsv_sug1=6&rsv_sug7=101&rsv_sug2=0&rsv_btype=i&inputT=3202&rsv_sug4=4022'%(word), headers=headers).content.decode("utf-8")
+soup = BeautifulSoup(url, 'html.parser')
+print(soup.find_all("h3",class_ = 'c-title t'))
+
+
+# -*- coding: utf-8 -*-
+
+################################################################################
+## Form generated from reading UI file 'untitledMzmhCx.ui'
+##
+## Created by: Qt User Interface Compiler version 5.15.2
+##
+## WARNING! All changes made in this file will be lost when recompiling UI file!
+################################################################################
+
+# from PySide2.QtCore import *
+# from PySide2.QtGui import *
+# from PySide2.QtWidgets import *
+
+
+# class Ui_MainWindow(object):
+#     def setupUi(self, MainWindow):
+#         if not MainWindow.objectName():
+#             MainWindow.setObjectName(u"MainWindow")
+#         MainWindow.resize(932, 600)
+#         self.centralwidget = QWidget(MainWindow)
+#         self.centralwidget.setObjectName(u"centralwidget")
+#         self.label = QLabel(self.centralwidget)
+#         self.label.setObjectName(u"label")
+#         self.label.setGeometry(QRect(20, 70, 541, 351))
+#         self.textEdit = QTextEdit(self.centralwidget)
+#         self.textEdit.setObjectName(u"textEdit")
+#         self.textEdit.setGeometry(QRect(10, 10, 671, 41))
+#         self.pushButton = QPushButton(self.centralwidget)
+#         self.pushButton.setObjectName(u"pushButton")
+#         self.pushButton.setGeometry(QRect(750, 40, 93, 28))
+#         self.pushButton_2 = QPushButton(self.centralwidget)
+#         self.pushButton_2.setObjectName(u"pushButton_2")
+#         self.pushButton_2.setGeometry(QRect(750, 120, 93, 28))
+#         self.pushButton_3 = QPushButton(self.centralwidget)
+#         self.pushButton_3.setObjectName(u"pushButton_3")
+#         self.pushButton_3.setGeometry(QRect(750, 220, 93, 28))
+#         self.pushButton_4 = QPushButton(self.centralwidget)
+#         self.pushButton_4.setObjectName(u"pushButton_4")
+#         self.pushButton_4.setGeometry(QRect(750, 320, 93, 28))
+#         MainWindow.setCentralWidget(self.centralwidget)
+#         self.menubar = QMenuBar(MainWindow)
+#         self.menubar.setObjectName(u"menubar")
+#         self.menubar.setGeometry(QRect(0, 0, 932, 26))
+#         MainWindow.setMenuBar(self.menubar)
+#         self.statusbar = QStatusBar(MainWindow)
+#         self.statusbar.setObjectName(u"statusbar")
+#         MainWindow.setStatusBar(self.statusbar)
+
+#         self.retranslateUi(MainWindow)
+
+#         QMetaObject.connectSlotsByName(MainWindow)
+#     # setupUi
+
+#     def retranslateUi(self, MainWindow):
+#         MainWindow.setWindowTitle(QCoreApplication.translate("MainWindow", u"MainWindow", None))
+#         self.label.setText("")
+#         self.textEdit.setHtml(QCoreApplication.translate("MainWindow", u"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+# "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+# "p, li { white-space: pre-wrap; }\n"
+# "</style></head><body style=\" font-family:'SimSun'; font-size:9pt; font-weight:400; font-style:normal;\">\n"
+# "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">\u641c\u7d22<br /></p></body></html>", None))
+#         self.pushButton.setText(QCoreApplication.translate("MainWindow", u"\u4fdd\u5b58\u6570\u636e", None))
+#         self.pushButton_2.setText(QCoreApplication.translate("MainWindow", u"\u83b7\u53d6\u7f51\u7ad9\u94fe\u63a5", None))
+#         self.pushButton_3.setText(QCoreApplication.translate("MainWindow", u"\u751f\u6210\u5206\u6790\u56fe\u8868", None))
+#         self.pushButton_4.setText(QCoreApplication.translate("MainWindow", u"\u751f\u6210\u77e5\u8bc6\u56fe\u8c31", None))
+#     # retranslateUi
+
+
